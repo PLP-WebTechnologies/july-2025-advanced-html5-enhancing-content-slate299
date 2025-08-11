@@ -1,0 +1,265 @@
+<!-- 
+  Filename: enhanced-form.html
+  Author: Natasha HINGA
+  Date: Aug 11, 2025
+  Description: Demonstrating HTML5 content enhancement and form mastery with lists, tables, media, and native HTML5 validation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Enhanced Content & Form</title>
+    <style>
+      /* Basic styling for readability and clean layout */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f8f9fa;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      section {
+        margin-bottom: 30px;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      fieldset {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      legend {
+        font-weight: bold;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        border: none;
+      }
+      input[type="submit"]:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Title -->
+    <h1>HTML5 Enhanced Content & Form Demo</h1>
+
+    <!-- SECTION 1: Lists Example -->
+    <section>
+      <h2>Popular Web Development Languages</h2>
+      <!-- Ordered list for ranking -->
+      <ol>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+      </ol>
+
+      <h3>Specializations (Unordered List)</h3>
+      <ul>
+        <li>Front-End Development</li>
+        <li>Back-End Development</li>
+        <li>Full-Stack Development</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 2: Table Example -->
+    <section>
+      <h2>Course Schedule</h2>
+      <!-- Table with headings for clarity -->
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Topic</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>HTML & CSS Basics</td>
+            <td>10:00 - 12:00</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>JavaScript Fundamentals</td>
+            <td>2:00 - 4:00</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Responsive Design</td>
+            <td>11:00 - 1:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Featured Media</h2>
+
+      <!-- Accessible image example (using a real online image) -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg"
+        alt="A scenic landscape"
+        width="400"
+      />
+
+      <!-- Audio example using a sample hosted online -->
+      <h3>Sample Audio</h3>
+      <audio controls>
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+      <!-- No need to upload your own file; plays from the provided online source -->
+
+      <!-- Video example using a sample hosted online -->
+      <h3>Sample Video</h3>
+      <video
+        width="400"
+        controls
+        poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg"
+      >
+        <source
+          src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <!-- Video has a poster image that displays before play -->
+    </section>
+
+    <!-- SECTION 4: HTML5 Form -->
+    <section>
+      <h2>Registration Form</h2>
+      <!-- Form with HTML5 validation attributes -->
+      <form action="#" method="post">
+        <!-- Grouping personal information -->
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <!-- Text input with placeholder & required -->
+          <label for="fullname">Full Name:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <!-- Email input with built-in validation -->
+          <label for="email">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="e.g. example@mail.com"
+            required
+          />
+
+          <!-- Number input with range limits -->
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" min="18" max="60" required />
+        </fieldset>
+
+        <!-- Grouping account details -->
+        <fieldset>
+          <legend>Account Details</legend>
+
+          <!-- Password with minlength & pattern -->
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="6"
+            pattern=".{6,}"
+            placeholder="At least 6 characters"
+            required
+          />
+
+          <!-- Readonly field example -->
+          <label for="refcode">Referral Code:</label>
+          <input
+            type="text"
+            id="refcode"
+            name="refcode"
+            value="WEB2025"
+            readonly
+          />
+        </fieldset>
+
+        <!-- Grouping preferences -->
+        <fieldset>
+          <legend>Preferences</legend>
+
+          <!-- Dropdown select -->
+          <label for="course">Preferred Course:</label>
+          <select id="course" name="course" required>
+            <option value="">--Select a course--</option>
+            <option value="htmlcss">HTML & CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="fullstack">Full Stack Development</option>
+          </select>
+
+          <!-- Textarea for additional input -->
+          <label for="comments">Additional Comments:</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="4"
+            placeholder="Your message here..."
+          ></textarea>
+        </fieldset>
+
+        <!-- Submit button -->
+        <input type="submit" value="Register" />
+      </form>
+    </section>
+  </body>
+</html>
